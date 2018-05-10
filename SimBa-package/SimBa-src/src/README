@@ -1,0 +1,1 @@
+Remark: If build the software under Linux, please rename the "CMakeLists-Ubuntu.txt" to "CMakeLists.txt" for CMake.

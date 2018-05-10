@@ -1,0 +1,4 @@
+The ANN lib and dll files for Windows are included in this program.
+However, depending the Windows system is 64bit or 32bit, 
+the included ANN lib and dll files should be renamed accordingly for building and running.
+See 'src/lib' and 'src/dll' folders for more details.

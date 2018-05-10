@@ -1,0 +1,166 @@
+/*****************************************************************************/
+"SimBa" software for computing persistence of input point cloud 
+/*****************************************************************************/
+
+"SimBa" software is developed by the Jyamiti research group headed by 
+Prof. Tamal K. Dey at the Department of Computer Science and Engineering 
+of The Ohio State University.
+
+The binaries are distributed for: Windows 64bit, Windows 32bit and Ubuntu Linux 32bit;
+
+=================================
+DESCRIPTION
+=================================
+
+The "SimBa" software can compute computing persistence of input point cloud.
+This software is developed based on the following paper:
+
+	* Paper: T. K. Dey, D. Shi and Y. Wang.  
+		SimBa: An Efficient Tool for Approximating Rips-filtration 
+		Persistence via Simplicial Batch-collapse
+		(submitted to ESA 2016)
+
+=================================
+USAGE
+=================================
+-------------------------------------------------------------------------------
+./SimBa -i <input_points> -o <persistence_result> -c <increase_ratio> --dim <int_value> [-options]
+-------------------------------------------------------------------------------
+
+SimBa Usage:
+  -h				Help information;
+
+  -l				License information;
+
+  -i arg			Input file name;
+
+  -o arg (=persistence.txt)	Output file name prefix (default value:
+				"persistence.txt");
+
+  -c arg (=1.1)			The parameter of scale increase between two batches
+				(default value: 1.1);
+
+  --dim arg (=2)		The maximum dimension user needs in the output
+				persistence barcodes (default value: 2)
+
+=================================
+INPUT PARAMETERS:
+=================================
+
+<input_points>       	: input points file in the following format:
+				/////////////////
+				d #dimension of the points
+				x_1 x_2 ... x_d #coordinates of the first point
+				 ...
+				x_1 x_2 ... x_d #coordinates of the last point
+				/////////////////
+				Example: the following file contains 2 points in R^3
+				*****************
+				* 3		*
+				* 1.0 1.0 1.0	*
+				* -2.0 2.0 2.0	*
+				*****************
+
+=================================
+OUTPUT FILES:
+=================================
+
+"SimBa" produces two output files: 
+1) <persistence_result> : the file contains the output persistence.
+
+Each line gives a persistence barcode of the image H(K)--f1--f2--...--fn--> H(L) in the indicated dimension:
+	
+	dim_p birth_time_1 death_time_1
+	dim_p birth_time_2 death_time_2
+	...
+	dim_p birth_time_k death_time_k	
+
+	Notice:
+	If a barcode has infinite persistence then the death_time for this pair is "inf";
+	Example: the following is output persistence file for the previous elementary simplicial map example
+	*****************************************************************************		
+	* 0 0.1 inf
+	* 0 0.1 0.2
+	* 0 0.1 0.2
+	* 1 0.2 0.4
+	*****************************************************************************
+
+2) There will be an additional file named as "Timing.txt" provided in the current location which contains timing results
+	and complex size results.
+
+=================================
+EXAMPLE
+=================================
+
+A sample input points file "dt.txt" is provided in "SimBa-Example" folder
+which givens 6734 points sampled from the surface of a double-torus.
+
+Run the following command:
+
+Complete command:
+	./SimBa -i dt.txt -o persistence.txt -c 1.1 --dim 2
+
+Or simply use default parameters value: 
+	./SimBa -i dt.txt
+
+
+=================================
+LEGAL TERMS
+=================================
+
+THIS SOFTWARE IS PROVIDED "AS-IS". THERE IS NO WARRANTY OF ANY KIND. 
+NEITHER THE AUTHORS NOR THE OHIO STATE UNIVERSITY WILL BE LIABLE FOR 
+ANY DAMAGES OF ANY KIND, EVEN IF ADVISED OF SUCH POSSIBILITY.
+
+This software was developed (and is copyrighted by) the Jyamiti group at 
+The Ohio State University. Please do not redistribute this software. 
+This program is for academic research use only. This software uses the  
+Boost library (www.boost.org) and Ann library
+(www.cs.umd.edu/~mount/ANN/) which are covered under their own licenses.
+
+ 
+---------------------------------------------------------------------------
+
+The Boost library's license 
+(which applies to the Boost library ONLY and NOT to this program itself) is 
+as follows:
+
+LICENSE
+---------------------------------------------------------------------------
+Boost Software License - Version 1.0 - August 17th, 2003
+
+Permission is hereby granted, free of charge, to any person or organization
+obtaining a copy of the software and accompanying documentation covered by
+this license (the "Software") to use, reproduce, display, distribute,
+execute, and transmit the Software, and to prepare derivative works of the
+Software, and to permit third-parties to whom the Software is furnished to
+do so, all subject to the following:
+
+The copyright notices in the Software and this entire statement, including
+the above license grant, this restriction and the following disclaimer,
+must be included in all copies of the Software, in whole or in part, and
+all derivative works of the Software, unless such copies or derivative
+works are solely in the form of machine-executable object code generated by
+a source language processor.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+---------------------------------------------------------------------------
+
+ANN library's license
+(which applies to the ANN library ONLY and NOT to this program itself) is 
+as follows:
+
+LICENSE
+---------------------------------------------------------------------------
+The ANN Library (all versions) is provided under the terms and
+conditions of the GNU Lesser General Public Library, which is stated
+below.  It can also be found at:
+
+   http://www.gnu.org/copyleft/lesser.html
+---------------------------------------------------------------------------

@@ -1,0 +1,7 @@
+Copy the executable and dll files here and run the following commands:
+
+Complete command:
+	./SimBa -i dt.txt -o persistence.txt -c 1.1 --dim 2
+
+Or simply use default parameters value: 
+	./SimBa -i dt.txt
