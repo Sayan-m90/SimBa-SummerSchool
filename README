@@ -16,6 +16,14 @@ Note: More CAD based Mesh files can be found online, for instance:
 
 
 Instructions:
+TO RUN prebuilt .exe FOR WINDOWS:
+COPY the DLL file from 'SimBa-src/src/dll' to 'C:/Windows/System32/'
+If you are using a 64bit machine, rename ANN64.dll to ANN.dll before copying else do the same for ANN32.dll
+Rename the exe file 'SimBa' in 'SimBa-bin/windows-64' to 'SimBa.exe'
+Run SimBa.exe -h in your command prompt
+If it works, you are all set, use this to run SimBa.exe -i <input-file> but bringing inputs files to the same location
+
+
 1. Install Simba and all associated softwares
 The zip file input contains the input model files
 It has two formats *.off (to be input to Meshlab) and *.txt (to be used as input to SimBa)
