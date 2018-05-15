@@ -5,7 +5,7 @@ Kindy install the following software for demo:
 3. Boost (A C++ library: https://www.boost.org/) 
 4. SimBa
 
-Instructions to install (5) is given in its respective folders.
+Instructions to install (4) is given in its folders.
 Note:
 Meshlab is used to visualise the Mesh
 I shal go through the installation of SimBa if need be but please install Processing, Meshlab and Boost
@@ -14,3 +14,12 @@ Note: More CAD based Mesh files can be found online, for instance:
 1. http://people.sc.fsu.edu/~jburkardt/data/off/off.html  or
 2. http://www.holmes3d.net/graphics/offfiles/
 
+
+Instructions:
+1. Install Simba and all associated softwares
+The zip file input contains the input model files
+It has two formats *.off (to be input to Meshlab) and *.txt (to be used as input to SimBa)
+View the *.off file in Meshlab
+Input the corresponding *.txt file to Simba as: ./SimBa -i *.txt
+Simba Outputs the barcode file to persistence.txt ( or choose your own output file using -o)
+View the corrsponding barcode using the python script: python barcode-create.py <filename> <no-of-bars>
