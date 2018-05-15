@@ -1,4 +1,5 @@
 The softwares SimBa and Simpers should work both on Linux and Windows. While they are not tested on Mac, it should still work.
+First try running the binaries given in SimBa-bin. If it does not work, try installing them. See instructions below to run the binaries
 Kindy install the following software for demo:
 1. MeshLab (http://www.meshlab.net/) or any other Mesh viewing software as GeomView
 2. Cmake-GUI(https://cmake.org/runningcmake/)
@@ -22,12 +23,17 @@ If you are using a 64bit machine, rename ANN64.dll to ANN.dll before copying els
 Rename the exe file 'SimBa' in 'SimBa-bin/windows-64' to 'SimBa.exe'
 Run SimBa.exe -h in your command prompt
 If it works, you are all set, use this to run SimBa.exe -i <input-file> but bringing inputs files to the same location
-
+TO RUN prebuilt binaries for UBUNTU:
+Copy libANN.a from 'SimBa-src/src/lib' to /usr/lib
+Install Boost
+Run SimBa in SimBa-bin by ./SimBa -h
 
 1. Install Simba and all associated softwares
 The zip file input contains the input model files
 It has two formats *.off (to be input to Meshlab) and *.txt (to be used as input to SimBa)
 View the *.off file in Meshlab
-Input the corresponding *.txt file to Simba as: ./SimBa -i *.txt
+Input the corresponding *.txt file to Simba as: 
+./SimBa -i *.txt(LINUX)
+SimBa.exe -i *.txt (WINDOWS)
 Simba Outputs the barcode file to persistence.txt ( or choose your own output file using -o)
 View the corrsponding barcode using the python script: python barcode-create.py <filename> <no-of-bars>
