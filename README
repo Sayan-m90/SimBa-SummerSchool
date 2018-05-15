@@ -27,6 +27,10 @@ TO RUN prebuilt binaries for UBUNTU:
 Copy libANN.a from 'SimBa-src/src/lib' to /usr/lib
 Install Boost
 Run SimBa in SimBa-bin by ./SimBa -h
+TO RUN prebuilt binaries for MAC_OSX:
+Copy libANN.a from 'SimBa-src/src/MAC_OS/lib' to /usr/lib (Code donated by PATRIK LIN from ISU)
+Install Boost
+Run SimBa in SimBa-bin by ./SimBa -h
 
 1. Install Simba and all associated softwares
 The zip file input contains the input model files
