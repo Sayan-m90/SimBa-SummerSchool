@@ -115,7 +115,7 @@ barlist0 = []
 barlist1 = []
 barlist2 = []
 plt.figure(1)
-plt.subplot(311)
+plt.subplot(211)
 plt.xlabel('0-dim')
 for element in y_pos:
 	if element>= len(bzeroesinf) - z[0]:
@@ -134,7 +134,7 @@ for element in y_pos:
 bonesinf = list(reversed(bonesinf))
 donesinf = list(reversed(donesinf))
 y_pos = np.arange(len(bonesinf))
-plt.subplot(312)
+plt.subplot(212)
 plt.xlabel('1-dim')
 for element in y_pos:
 	if element>= len(bonesinf) - z[1]:
@@ -150,13 +150,13 @@ for element in y_pos:
 # plt.barh(y_pos, onersinf, align='center', alpha=0.5, color='black')
 
 
-btwoersinf = list(reversed(btwoersinf))
-dtwoersinf = list(reversed(dtwoersinf))
-y_pos = np.arange(len(btwoersinf))
-plt.subplot(313)
-plt.xlabel('2-dim')
-for element in y_pos:
-	barlist2.append(plt.plot([btwoersinf[element], dtwoersinf[element]], [element, element], color='red', linestyle='-', linewidth=4))
+# btwoersinf = list(reversed(btwoersinf))
+# dtwoersinf = list(reversed(dtwoersinf))
+# y_pos = np.arange(len(btwoersinf))
+# plt.subplot(313)
+# plt.xlabel('2-dim')
+# for element in y_pos:
+# 	barlist2.append(plt.plot([btwoersinf[element], dtwoersinf[element]], [element, element], color='red', linestyle='-', linewidth=4))
 
 # barlist2=plt.barh(y_pos, twoersinf, align='center', alpha=0.5, color='green')
 # for ind in range(0,len(btwoersinf)-z[2]):
